@@ -1,19 +1,73 @@
-var user = prompt("Enter your phone number with dashes: ");
+var getPhone = function(){
+	var phone = prompt('Enter your phone number with dashes')
+	if (phone.charAt(3) && phone.charAt(7) === '-' && phone.length === 12){
+		return true
+	}
+	else {
+		getPhone()
+	}
+}
+var truePhone = getPhone()
+	if (truePhone) {
+		alert(true)
+	}
 
-alert(user.charAt(3) && user.charAt(7) === '-' && user.length === 12);
 
-var birth = prompt("Date of birth: ")
+var getBirth = function(){
+	var birth = prompt("Date of birth: xx/xx/xx ")
+	if (birth.charAt(2) && birth.charAt(5) === "/"){
+		return true
+	}
+	else {
+		getBirth()
+	}
+}
+var trueBirth = getBirth()
+	if (trueBirth) {
+		alert(true)
+	}
 
-alert(birth.charAt(2) && birth.charAt(5) === "/")
+var getPostal = function(){
+	var postal = prompt("Postal Code: xxxxx or xxxxx-xxxx")
+	if (postal.length === 5 || postal.length === 10 && postal.charAt(5) === '-'){
+		return true
+	}
+	else {
+		getPostal()
+	}
+}
+var truePostal = getPostal()
+	if (truePostal) {
+		alert(true)
+	}
 
-var postal = prompt("Postal Code: ")
+var getState = function(){
+	var state = prompt("Enter State: ").toUpperCase()
+	if (state.length === 2) {
+		return true
+	} 
+	else {
+		getState()
+	}
+}
+var trueState = getState()
+	if (trueState) {
+		alert(true)
+	}
 
-alert(postal.length === 5)
 
-var state = prompt("Enter State: ").toUpperCase()
+var getMarried = function(){
+	var married = prompt("Are you married? ")
+	if (married === "yes" || married === "no") {
+		return true
+	}
+	else {
+		getMarried()
+	}
+}
+var trueMarried = getMarried()
+	if (trueMarried) {
+		alert(true)
+	}
 
-alert(state.length === 2) 
 
-var married = prompt("Are you married? ")
-
-alert(married === "yes" || married === "no")
